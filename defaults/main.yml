@@ -1,5 +1,7 @@
 ---
 
+devture_systemd_docker_base_systemd_path: "/etc/systemd/system"
+
 # Specifies the path to use for the `HOME` environment variable for systemd unit files.
 # Docker 20.10 complains with `WARNING: Error loading config file: .dockercfg: $HOME is not defined`
 # if `$HOME` is not defined, so we define something to make it happy.
