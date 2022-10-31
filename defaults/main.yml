@@ -9,3 +9,4 @@ devture_systemd_docker_base_systemd_unit_home_path: /root
 
 devture_systemd_docker_base_host_command_docker: "/usr/bin/env docker"
 devture_systemd_docker_base_host_command_sh: "/usr/bin/env sh"
+devture_systemd_docker_base_host_command_systemctl: "/usr/bin/env systemctl"
