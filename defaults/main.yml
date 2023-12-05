@@ -22,3 +22,6 @@ devture_systemd_docker_base_container_image_pull_method: "{{ devture_systemd_doc
 # Specifies how various roles will create container networks.
 # Valid options: ansible-module, command
 devture_systemd_docker_base_container_network_creation_method: "{{ devture_systemd_docker_base_container_system_interaction_method }}"
+
+# Specifies how long to give to the container stopping process (docker stop --time=X CONTAINER) to run gracefully, before killing the container
+devture_systemd_docker_base_container_stop_grace_time_seconds: 60
