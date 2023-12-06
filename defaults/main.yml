@@ -23,5 +23,9 @@ devture_systemd_docker_base_container_image_pull_method: "{{ devture_systemd_doc
 # Valid options: ansible-module, command
 devture_systemd_docker_base_container_network_creation_method: "{{ devture_systemd_docker_base_container_system_interaction_method }}"
 
-# Specifies how long to give to the container stopping process (docker stop --time=X CONTAINER) to run gracefully, before killing the container
-devture_systemd_docker_base_container_stop_grace_time_seconds: 60
+# Specifies how long to give to the container stopping process (docker stop --time=X CONTAINER) to run gracefully, before killing the container.
+# We use a relatively short interval here, because:
+# - certain services ignore SIGTERM and we don't wish to be stuck waiting for long
+# - certain services (HTTP servers) may wish to wait for long-polling connections to end and they may not be ending as quickly as we wish
+# A few seconds of grace time should be enough for everyone.
+devture_systemd_docker_base_container_stop_grace_time_seconds: 3
