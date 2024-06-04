@@ -30,6 +30,10 @@ devture_systemd_docker_base_host_command_systemctl: "/usr/bin/env systemctl"
 # - re-running the playbook fully: `just install-all`
 devture_systemd_docker_base_ipv6_enabled: false
 
+# The name of the Docker service that other services will depend on.
+# You can use an empty string to remove this dependency.
+devture_systemd_docker_base_docker_service_name: docker.service
+
 # Specifies how various roles will interact with the container system when it comes to pulling images, creating networks, etc.
 # Valid options: ansible-module, command
 devture_systemd_docker_base_container_system_interaction_method: ansible-module
